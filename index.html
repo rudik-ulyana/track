@@ -1736,40 +1736,35 @@ st('Данные в этом браузере');render();if(!localStorage.getIte
 </script></body></html>
 
 
-/* Mobile layout: brand above navigation; nothing stays pinned while scrolling */
+/* Mobile: fixed brand + horizontally scrollable tabs; page scrolls vertically */
 @media (max-width: 900px) {
-  .app > aside,
+  .app { grid-template-columns: minmax(0, 1fr) !important; align-items: start !important; }
   aside {
-    position: static !important;
-    top: auto !important;
-    align-self: auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-    z-index: auto !important;
-    overflow: visible !important;
+    position: sticky !important; top: 0 !important; z-index: 20 !important;
+    height: auto !important; min-height: 0 !important;
+    display: flex !important; flex-direction: column !important;
+    align-items: stretch !important; gap: 6px !important;
+    overflow: visible !important; margin: 0 !important;
+    border-radius: 0 0 16px 16px !important; padding: 8px 10px 9px !important;
   }
   aside .brand {
-    display: flex !important;
-    order: 0 !important;
-    width: 100% !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 0 8px !important;
-    padding: 7px 8px 12px !important;
-    border-bottom: 1px solid var(--line) !important;
+    display: flex !important; order: 0 !important; width: 100% !important;
+    flex: 0 0 auto !important; justify-content: center !important;
+    align-items: center !important; margin: 0 !important;
+    padding: 5px 8px 9px !important; border-bottom: 1px solid var(--line) !important;
   }
   aside .nav {
-    order: 1 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    width: 100% !important;
-    overflow-x: auto !important;
+    display: flex !important; order: 1 !important; flex-direction: row !important;
+    flex-wrap: nowrap !important; width: 100% !important; min-width: 0 !important;
+    overflow-x: auto !important; overflow-y: hidden !important;
+    white-space: nowrap !important; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; padding: 2px 0 !important;
   }
-  .top {
-    position: static !important;
-    top: auto !important;
-    z-index: auto !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+  aside .nav::-webkit-scrollbar { display: none !important; }
+  aside .nav button { flex: 0 0 auto !important; width: auto !important; white-space: nowrap !important; }
+  main { min-width: 0 !important; overflow: visible !important; }
+  main .top {
+    position: static !important; top: auto !important; z-index: auto !important;
+    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
   }
 }
