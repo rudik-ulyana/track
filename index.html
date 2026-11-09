@@ -2,7 +2,7 @@
 <html lang="ru" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Трекер Улика</title>
-<link rel="manifest" href="manifest.webmanifest?v=3"><link rel="apple-touch-icon" sizes="180x180" href="icon-180-v2.png?v=3"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Трекер Улика"><meta name="theme-color" content="#f7f4f6">
+<link rel="manifest" href="manifest.webmanifest?v=3"><link rel="apple-touch-icon" sizes="180x180" href="icon-180-v2.png?v=3"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Трекер Улика"><meta name="theme-color" content="#F3E4D8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>
 try{
@@ -369,6 +369,18 @@ td input{background:var(--in);color:var(--ink)}
 }
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   aside,.top,.k,.card,.sc,.tw,.md,.cal,.tkl{background:var(--card)!important}
+}
+@media(max-width:900px){
+  :root:not([data-theme="dark"]) aside .brand,
+  :root:not([data-theme="dark"]) .nav{
+    background:linear-gradient(145deg,rgba(255,250,243,.82),rgba(238,217,200,.62))!important;
+    border-color:var(--glass-border)!important;
+  }
+  :root[data-theme="dark"] aside .brand,
+  :root[data-theme="dark"] .nav{
+    background:linear-gradient(145deg,rgba(88,55,43,.82),rgba(47,28,23,.78))!important;
+    border-color:var(--glass-border)!important;
+  }
 }
 
 
@@ -802,413 +814,18 @@ tr:hover td{background:var(--hov)!important}
 /* Расписание: чуть более заметные границы полей времени */
 .md input[type="time"]{border-color:color-mix(in srgb,var(--line2) 78%,var(--mute) 22%)!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--line2) 28%,transparent)}
 :root[data-theme="dark"] .md input[type="time"]{border-color:color-mix(in srgb,var(--line2) 72%,#c8b8d8 28%)!important}
-</style><style id="pastel-palette-v2">
-
-/* ===== Pastel rose / sky blue / cool grey palette ===== */
-:root{
- color-scheme:light;
- --bg:#F2F3F5;
- --card:rgba(255,255,255,.88);
- --in:#F7F8FA;
- --line:rgba(184,193,204,.48);
- --line2:#C9CFD7;
- --ink:#454A53;
- --mute:#747B86;
- --dim:#969DA7;
- --acc:#E88FA4;
- --ok:#77A9C8;
- --bad:#D9798D;
- --warn:#8CAFCB;
- --hov:rgba(183,207,235,.25);
- --rs:linear-gradient(135deg,#F9D5DC,#D9E7F5);
- --rb:#E5C5D0;
- --c1:#AAB2BC;--c2:#E99BAE;--c3:#AFCBE7;--c4:#929EAC;
- --c5:#D2D6DC;--c6:#E58CA2;--c7:#91B9D7;
- --g1:#E99BAE;--g2:#91B9D7;--g3:#AAB2BC;--g4:#E58CA2;--g5:#AFCBE7;
- --glass-shadow:0 12px 32px rgba(106,121,140,.10),inset 0 1px 0 rgba(255,255,255,.96);
- --glass-border:rgba(255,255,255,.94);
- --glass-surface:linear-gradient(145deg,rgba(255,255,255,.94),rgba(235,239,244,.86));
- --glass-highlight:rgba(255,255,255,.86);
-}
-:root[data-theme=dark]{
- color-scheme:dark;
- --bg:#303238;
- --card:rgba(64,68,76,.96);
- --in:#383C44;
- --line:rgba(211,218,227,.12);
- --line2:rgba(211,218,227,.22);
- --ink:#F0F1F3;
- --mute:#C0C5CD;
- --dim:#9DA4AE;
- --acc:#F0A2B4;
- --ok:#A9CBE5;
- --bad:#F08FA4;
- --warn:#B9D2EA;
- --hov:rgba(183,207,235,.12);
- --rs:linear-gradient(135deg,rgba(105,76,89,.88),rgba(74,86,101,.88));
- --rb:rgba(231,192,205,.34);
- --c1:#BBC2CB;--c2:#F0A2B4;--c3:#B9D2EA;--c4:#AAB5C2;
- --c5:#8F969F;--c6:#F08FA4;--c7:#A9CBE5;
- --g1:#F0A2B4;--g2:#A9CBE5;--g3:#BBC2CB;--g4:#F08FA4;--g5:#B9D2EA;
- --glass-shadow:0 16px 38px rgba(0,0,0,.20),inset 0 1px 0 rgba(255,255,255,.08);
- --glass-border:rgba(219,225,233,.14);
- --glass-surface:linear-gradient(145deg,rgba(69,73,82,.98),rgba(57,61,69,.98));
- --glass-highlight:rgba(255,255,255,.08);
-}
-html{background:var(--bg)!important;transition:background .3s ease}
-body{color:var(--ink)!important;background:
- radial-gradient(ellipse at 10% 8%,rgba(255,255,255,.88),transparent 34%),
- radial-gradient(ellipse at 88% 18%,rgba(183,207,235,.48),transparent 38%),
- radial-gradient(ellipse at 56% 100%,rgba(246,194,207,.36),transparent 38%),
- linear-gradient(135deg,#F7F7F8 0%,#E9EDF2 52%,#F4F5F7 100%)!important;
- background-attachment:fixed!important}
-:root[data-theme=dark] body{background:
- radial-gradient(ellipse at 12% 8%,rgba(183,207,235,.13),transparent 36%),
- radial-gradient(ellipse at 88% 18%,rgba(240,162,180,.14),transparent 38%),
- radial-gradient(ellipse at 55% 100%,rgba(190,198,208,.09),transparent 40%),
- linear-gradient(135deg,#303238 0%,#383B42 52%,#303238 100%)!important}
-body:before{background:radial-gradient(circle,rgba(232,143,164,.16),transparent 70%)!important}
-body:after{background:radial-gradient(circle,rgba(183,207,235,.25),transparent 70%)!important}
-:root[data-theme=dark] body:before{background:radial-gradient(circle,rgba(240,162,180,.14),transparent 70%)!important}
-:root[data-theme=dark] body:after{background:radial-gradient(circle,rgba(183,207,235,.12),transparent 70%)!important}
-aside{background:linear-gradient(145deg,rgba(255,255,255,.90),rgba(230,235,241,.82))!important}
-:root[data-theme=dark] aside{background:linear-gradient(145deg,rgba(70,74,82,.98),rgba(56,60,68,.98))!important}
-.top{background:rgba(255,255,255,.78)!important}
-:root[data-theme=dark] .top{background:rgba(67,71,79,.94)!important}
-.k,.card,.sc,.tw,.md,.cal,.tkl{background:var(--glass-surface)!important;border-color:var(--glass-border)!important;box-shadow:var(--glass-shadow)!important}
-.k b{color:#D97891!important}
-:root[data-theme=dark] .k b{color:#F3B0BF!important}
-h1,.brand,.md h3{color:var(--ink)!important}
-.brand svg{color:var(--acc)!important}
-.nav button,.pill{color:var(--mute)!important}
-.nav button.on,.pill.on{background:var(--rs)!important;border-color:var(--rb)!important;color:var(--ink)!important}
-.b{background:rgba(183,207,235,.18)!important;color:var(--ink)!important;border-color:var(--line2)!important}
-.b:hover{background:rgba(183,207,235,.34)!important}
-.pri{background:linear-gradient(135deg,#EEA0B2,#D97F98)!important;border-color:#E99BAD!important;color:#493B43!important;box-shadow:0 7px 18px rgba(216,126,151,.22)!important}
-:root[data-theme=dark] .pri{background:linear-gradient(135deg,#F0A8B9,#D88CA4)!important;color:#373940!important;border-color:rgba(240,162,180,.55)!important}
-input,textarea,.fld,.dt,.cd,.dw,.hc,.hc2{background:var(--in)!important;color:var(--ink)!important;border-color:var(--line2)!important}
-th{background:rgba(214,222,232,.62)!important;color:var(--mute)!important}
-:root[data-theme=dark] th{background:rgba(183,207,235,.12)!important;color:var(--mute)!important}
-td{color:var(--ink)!important;border-color:var(--line)!important}
-:root[data-theme=dark] td{color:var(--ink)!important}
-.ov{background:rgba(73,81,93,.22)!important}
-:root[data-theme=dark] .ov{background:rgba(20,22,26,.62)!important}
-.ts{background:#737D8A!important;color:white!important}
-:root[data-theme=dark] .ts{background:#555D68!important}
-.pos{color:#6F9FBD!important}.neg{color:#D9798D!important}
-.hc.on,.hc2.on{background:#9ABEDB!important;border-color:#9ABEDB!important;color:#273744!important}
-.dw.on{background:#E99BAD!important;border-color:#E99BAD!important;color:#493B43!important}
-.cal .cg .sel{background:#E99BAD!important;color:#493B43!important}
 </style>
 
 
-<style id="palette-photo-reference-v3">
-/* Palette matched to the supplied swatch: blush pink / lavender / muted indigo */
-:root{
-  color-scheme:light;
-  --bg:#F8E6E9;
-  --card:rgba(255,248,249,.94);
-  --in:#F6EDEF;
-  --line:rgba(190,164,180,.30);
-  --line2:#D6C2D0;
-  --ink:#514653;
-  --mute:#887887;
-  --dim:#A997A8;
-  --acc:#E98F9D;
-  --ok:#829DB8;
-  --bad:#D87588;
-  --warn:#9988B8;
-  --hov:rgba(184,166,211,.17);
-  --rs:linear-gradient(125deg,#F7C9CB 0%,#C0B1D8 100%);
-  --rb:#D6B0C7;
-  --c1:#A99DB7;--c2:#E99AA5;--c3:#A99BCB;--c4:#91A9C8;
-  --c5:#C9BFCF;--c6:#D98291;--c7:#88A9C5;
-  --g1:#E99AA5;--g2:#91A9C8;--g3:#A99DB7;--g4:#D98291;--g5:#A99BCB;
-  --glass-shadow:0 12px 30px rgba(107,75,104,.09),inset 0 1px 0 rgba(255,255,255,.88);
-  --glass-border:rgba(255,255,255,.78);
-  --glass-surface:linear-gradient(145deg,rgba(255,250,250,.97),rgba(246,231,237,.94));
-  --glass-highlight:rgba(255,255,255,.72);
-}
-:root[data-theme=dark]{
-  color-scheme:dark;
-  /* Deepened version of the exact pink-lavender-indigo family; deliberately not grey/navy */
-  --bg:#373957;
-  --card:rgba(76,78,119,.97);
-  --in:#414365;
-  --line:rgba(218,199,235,.16);
-  --line2:rgba(220,199,235,.28);
-  --ink:#FFF0F2;
-  --mute:#D5C7E2;
-  --dim:#B9A9CD;
-  --acc:#FFC0C7;
-  --ok:#B8B0D8;
-  --bad:#FF9EAD;
-  --warn:#C6B5E0;
-  --hov:rgba(193,174,222,.17);
-  --rs:linear-gradient(125deg,#F2BFC7 0%,#A99ACD 55%,#656A9B 100%);
-  --rb:rgba(255,205,218,.42);
-  --c1:#C3B5D6;--c2:#FFC0C7;--c3:#B9A9D8;--c4:#A5B4D5;
-  --c5:#988FB8;--c6:#FF9EAD;--c7:#A5B8D8;
-  --g1:#FFC0C7;--g2:#A5B8D8;--g3:#C3B5D6;--g4:#FF9EAD;--g5:#B9A9D8;
-  --glass-shadow:0 16px 38px rgba(22,19,47,.25),inset 0 1px 0 rgba(255,231,239,.10);
-  --glass-border:rgba(225,207,239,.18);
-  --glass-surface:linear-gradient(145deg,rgba(83,84,130,.98),rgba(68,70,112,.98));
-  --glass-highlight:rgba(255,225,235,.09);
-}
-html{background:var(--bg)!important;transition:background .3s ease}
-body{
- color:var(--ink)!important;
- background:
-  radial-gradient(ellipse at 8% 0%,rgba(255,196,204,.50),transparent 38rem),
-  radial-gradient(ellipse at 94% 10%,rgba(183,166,216,.38),transparent 42rem),
-  linear-gradient(135deg,#F9E8EA 0%,#F4E4EB 52%,#EDE7F2 100%)!important;
- background-attachment:fixed!important;
-}
-:root[data-theme=dark] body{
- background:
-  radial-gradient(ellipse at 8% 0%,rgba(255,190,203,.18),transparent 38rem),
-  radial-gradient(ellipse at 94% 10%,rgba(185,169,221,.19),transparent 42rem),
-  linear-gradient(135deg,#383957 0%,#45466F 52%,#373957 100%)!important;
-}
-body:before{background:radial-gradient(circle,rgba(248,190,202,.20),transparent 70%)!important}
-body:after{background:radial-gradient(circle,rgba(178,164,217,.22),transparent 70%)!important}
-:root[data-theme=dark] body:before{background:radial-gradient(circle,rgba(255,188,203,.16),transparent 70%)!important}
-:root[data-theme=dark] body:after{background:radial-gradient(circle,rgba(186,171,225,.17),transparent 70%)!important}
-aside{background:linear-gradient(145deg,rgba(255,247,249,.94),rgba(242,222,232,.90))!important}
-:root[data-theme=dark] aside{background:linear-gradient(145deg,rgba(84,84,132,.98),rgba(65,67,108,.98))!important}
-.top{background:rgba(255,246,248,.78)!important}
-:root[data-theme=dark] .top{background:rgba(75,76,119,.94)!important}
-.k,.card,.sc,.tw,.md,.cal,.tkl{
- background:var(--glass-surface)!important;
- border-color:var(--glass-border)!important;
- box-shadow:var(--glass-shadow)!important;
-}
-.k b{color:#D9788D!important}
-:root[data-theme=dark] .k b{color:#FFC0C7!important}
-h1,.brand,.md h3{color:var(--ink)!important}
-.brand svg{color:var(--acc)!important}
-.nav button.on,.pill.on{background:var(--rs)!important;border-color:var(--rb)!important;color:var(--ink)!important}
-.b{background:color-mix(in srgb,var(--in) 72%,var(--card))!important;color:var(--ink)!important;border-color:var(--line2)!important}
-.b:hover{background:var(--hov)!important}
-.pri{background:linear-gradient(125deg,#F4B8C2,#DB879C)!important;border-color:#E9A1B0!important;color:#563D53!important}
-:root[data-theme=dark] .pri{background:linear-gradient(125deg,#FFC4CB,#B8A6D6)!important;border-color:#E6B9D0!important;color:#4A4267!important}
-input,textarea,.fld,.dt,.cd,.dw,.hc,.hc2{background:var(--in)!important;color:var(--ink)!important;border-color:var(--line2)!important}
-th{background:color-mix(in srgb,#B8A6D6 22%,var(--card))!important;color:var(--mute)!important}
-:root[data-theme=dark] th{background:rgba(190,174,222,.18)!important;color:var(--mute)!important}
-td{color:var(--ink)!important;border-color:var(--line)!important}
-:root[data-theme=dark] td{color:var(--ink)!important}
-.ov{background:rgba(91,65,93,.24)!important}
-:root[data-theme=dark] .ov{background:rgba(31,27,59,.64)!important}
-.ts{background:#75658F!important;color:#fff!important}
-:root[data-theme=dark] .ts{background:#292A4A!important;color:#FFF0F2!important}
-.pos{color:#739DBA!important}.neg{color:#D87588!important}
-:root[data-theme=dark] .pos{color:#B9C9EA!important}
-:root[data-theme=dark] .neg{color:#FFB0BC!important}
-.hc.on,.hc2.on{background:#B8A9D6!important;border-color:#B8A9D6!important;color:#403B5B!important}
-.dw.on,.cal .cg .sel{background:#F0A8B4!important;border-color:#F0A8B4!important;color:#553D56!important}
-/* Finished / crossed-out items remain unmistakably crossed out in both themes */
-.done,.tk.fin .tt{
- text-decoration-line:line-through!important;
- text-decoration-style:solid!important;
- text-decoration-thickness:2.5px!important;
- text-decoration-color:#D87588!important;
- color:#897887!important;
- opacity:.92;
-}
-:root[data-theme=dark] .done,
-:root[data-theme=dark] .tk.fin .tt{
- text-decoration-color:#FFC0C7!important;
- color:#D8C9E2!important;
- opacity:1;
-}
-.smoke-hero{
- background:linear-gradient(125deg,rgba(255,220,225,.96),rgba(194,179,220,.72))!important;
- border-color:rgba(255,255,255,.72)!important;
-}
-.smoke-hero .big-days{color:#76516F!important}
-:root[data-theme=dark] .smoke-hero{
- background:linear-gradient(125deg,rgba(242,184,197,.28),rgba(171,155,207,.30),rgba(82,85,137,.80))!important;
- border-color:rgba(236,211,239,.20)!important;
-}
-:root[data-theme=dark] .smoke-hero .big-days{color:#FFD0D5!important}
-:root[data-theme=dark] .smoke-hero div[style*="color:#d98eac"]{color:#FFD0D5!important}
-.theme-switch{border-color:var(--line2)!important;background:var(--rs)!important}
-.theme-switch-track{border-color:var(--rb)!important;background:var(--rs)!important}
-.theme-switch-thumb{background:linear-gradient(145deg,#F3B7C1,#A99BCB)!important;color:#fff!important}
-:root[data-theme=dark] .theme-switch-track{border-color:rgba(236,211,239,.35)!important;background:linear-gradient(110deg,#F0B7C3,#A99BCB,#555A88)!important}
-:root[data-theme=dark] .theme-switch-thumb{background:linear-gradient(145deg,#FFC3CB,#B7A6D6)!important;color:#4A4267!important}
-
-/* Final palette corrections: no green or brown accents in the requested areas */
-:root{
- --ok:#91AFCB;
- --acc:#E98FAD;
- --rs:linear-gradient(125deg,#DCEBFA 0%,#BFD9F1 100%);
- --rb:#AFCBE5;
-}
-:root[data-theme=dark]{
- --ok:#C7A6D2;
- --rs:linear-gradient(125deg,#F2BFCB 0%,#D9A8C5 55%,#A99ACD 100%);
- --rb:rgba(255,190,211,.48);
-}
-/* The exact heart silhouette from the user's reference */
-.brand .ulika-heart{width:25px!important;height:22px!important;flex:none;color:#F18EAF!important;overflow:visible}
-:root[data-theme=dark] .brand .ulika-heart{color:#F6A0BC!important}
-/* Light mode selected navigation and tabs: pale blue, never green */
-:root:not([data-theme=dark]) .nav button.on,
-:root:not([data-theme=dark]) .pill.on{
- background:linear-gradient(125deg,#E3F0FB,#C8DFF3)!important;
- border-color:#B8D2EA!important;
- color:#536C89!important;
- box-shadow:0 5px 16px rgba(119,157,194,.16),inset 0 1px 0 rgba(255,255,255,.95)!important;
-}
-/* Table headings: blue in light mode, blush pink in dark mode */
-:root:not([data-theme=dark]) table thead th,
-:root:not([data-theme=dark]) .dtbl thead th,
-:root:not([data-theme=dark]) thead th{
- background:linear-gradient(110deg,rgba(205,226,246,.96),rgba(222,235,248,.96))!important;
- color:#617B99!important;
- border-bottom:1px solid rgba(153,187,219,.55)!important;
-}
-:root[data-theme=dark] table thead th,
-:root[data-theme=dark] .dtbl thead th,
-:root[data-theme=dark] thead th{
- background:linear-gradient(110deg,rgba(224,151,177,.34),rgba(193,151,204,.30))!important;
- color:#F8DDE8!important;
- border-bottom:1px solid rgba(241,177,202,.30)!important;
-}
-/* Keep all table cells and table frames in the pink/lavender/blue family */
-:root:not([data-theme=dark]) .tw{
- border-color:rgba(169,198,226,.48)!important;
-}
-:root[data-theme=dark] .tw{
- border-color:rgba(226,166,195,.26)!important;
-}
-:root:not([data-theme=dark]) table td{
- border-bottom-color:rgba(169,198,226,.30)!important;
-}
-:root[data-theme=dark] table td{
- border-bottom-color:rgba(226,166,195,.22)!important;
-}
-:root:not([data-theme=dark]) .hc.on,
-:root:not([data-theme=dark]) .hc2.on{
- background:#BFD9F1!important;border-color:#AFCBE5!important;color:#425D7B!important;
-}
-:root[data-theme=dark] .hc.on,
-:root[data-theme=dark] .hc2.on{
- background:#E9A9C0!important;border-color:#E9A9C0!important;color:#583F61!important;
-}
-/* Override inherited olive/earthy decorative accents without changing meaning */
-:root .pos{color:#7199B8!important}
-:root[data-theme=dark] .pos{color:#D9B6D8!important}
-:root .bar i{filter:saturate(.9)}
-</style>
 
 
-<style id="ulika-final-color-fix">
-/* Final correction: financial table headers must never use brown shades. */
-:root:not([data-theme="dark"]) .tw table thead th,
-:root:not([data-theme="dark"]) .tw table th,
-:root:not([data-theme="dark"]) .dtbl thead th {
-  background:linear-gradient(110deg,#EAF3FA 0%,#E3EEF8 100%) !important;
-  color:#7189A3 !important;
-  border-bottom:1px solid rgba(164,190,216,.48) !important;
-}
-:root[data-theme="dark"] .tw table thead th,
-:root[data-theme="dark"] .tw table th,
-:root[data-theme="dark"] .dtbl thead th {
-  background:linear-gradient(110deg,rgba(222,151,180,.42) 0%,rgba(194,151,204,.36) 100%) !important;
-  color:#F7DFEA !important;
-  border-bottom:1px solid rgba(239,177,204,.34) !important;
-}
-/* Softer blue selection in light mode. */
-:root:not([data-theme="dark"]) .nav button.on,
-:root:not([data-theme="dark"]) .pill.on {
-  background:linear-gradient(125deg,#EAF3FA 0%,#DCEAF6 100%) !important;
-  border-color:#D1E1EF !important;
-  color:#657D96 !important;
-  box-shadow:0 4px 12px rgba(119,157,194,.10),inset 0 1px 0 rgba(255,255,255,.96) !important;
-}
-/* Theme switch stays pink in both themes; it does not inherit the blue selection color. */
-.theme-switch {background:linear-gradient(135deg,#F6C5D0,#E6B5CE) !important;border-color:rgba(220,157,184,.48) !important;}
-.theme-switch-track {background:linear-gradient(110deg,#F5C3CF,#E5B7D4) !important;border-color:rgba(218,157,185,.55) !important;}
-:root[data-theme="dark"] .theme-switch-track {background:linear-gradient(110deg,#EAAFC3,#C49BCB) !important;border-color:rgba(239,190,213,.42) !important;}
-.theme-switch-thumb {background:linear-gradient(145deg,#F7B8C8,#D99EC4) !important;color:#fff !important;}
-:root[data-theme="dark"] .theme-switch-thumb {background:linear-gradient(145deg,#FFC4D1,#D5A9D5) !important;color:#574568 !important;}
-/* Thin, readable strike-through for completed nicotine-free milestones and tasks. */
-.done,
-.tk.fin .tt {
-  text-decoration-line:line-through !important;
-  text-decoration-style:solid !important;
-  text-decoration-thickness:1px !important;
-  text-decoration-color:#C87998 !important;
-  text-decoration-skip-ink:auto !important;
-  opacity:1 !important;
-}
-:root[data-theme="dark"] .done,
-:root[data-theme="dark"] .tk.fin .tt {
-  text-decoration-color:#F0AFC4 !important;
-  text-decoration-thickness:1px !important;
-  color:#E3D7E8 !important;
-  opacity:1 !important;
-}
-
-/* Flat, uniform table-header fill: every column uses exactly the same color. */
-.tw table thead th,
-.tw table th,
-.dtbl thead th,
-table thead th {
-  background: #E6EFF8 !important;
-  background-image: none !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-}
-:root[data-theme="dark"] .tw table thead th,
-:root[data-theme="dark"] .tw table th,
-:root[data-theme="dark"] .dtbl thead th,
-:root[data-theme="dark"] table thead th {
-  background: #B98FAF !important;
-  background-image: none !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-}
-</style>
 
 
-<style id="ulika-uniform-light-table-headers">
-/* In light theme, every table header cell shares one flat pale-blue fill.
-   Remove per-column bands, gradients, inset shadows and divider borders everywhere. */
-:root:not([data-theme="dark"]) table thead,
-:root:not([data-theme="dark"]) table thead tr,
-:root:not([data-theme="dark"]) table thead th,
-:root:not([data-theme="dark"]) .tw th,
-:root:not([data-theme="dark"]) .dtbl th,
-:root:not([data-theme="dark"]) .hgrid th {
-  background-color: #E6EFF8 !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-}
-:root:not([data-theme="dark"]) table thead th:nth-child(n),
-:root:not([data-theme="dark"]) .tw table th:nth-child(n),
-:root:not([data-theme="dark"]) .dtbl th:nth-child(n),
-:root:not([data-theme="dark"]) .hgrid th:nth-child(n) {
-  background: #E6EFF8 !important;
-  background-image: none !important;
-}
-</style>
 
-<style id="schedule-time-chip-border-refine">
-/* Чуть более заметная, но мягкая рамка у плашек времени в недельном календаре. */
-.week-cell .event-time {
-  border: 1px solid color-mix(in srgb, #c989a4 38%, var(--line2));
-  background: color-mix(in srgb, #e5a2bb 19%, var(--card));
-}
-:root[data-theme="dark"] .week-cell .event-time {
-  border-color: color-mix(in srgb, #d995b2 34%, var(--line2));
-  background: color-mix(in srgb, #d995b2 17%, var(--card));
-}
-</style>
+
+
+
+
 
 <style id="ulika-split-fixed-header">
 /* ===== Телефон/планшет (<=900px): шапка и вкладки — два отдельных блока, оба закреплены ===== */
@@ -1276,6 +893,278 @@ table thead th {
   :root[data-theme] .top{position:relative!important;top:auto!important}
 }
 </style>
+<style id="caramel-glass-burgundy">
+
+/* ===== Caramel Glass × Burgundy · unified visual system ===== */
+:root{
+  color-scheme:light;
+  --bg:#F3E4D8;
+  --card:rgba(255,247,238,.64);
+  --in:rgba(255,247,238,.78);
+  --line:rgba(255,250,243,.72);
+  --line2:rgba(120,76,62,.22);
+  --ink:#48271F;
+  --mute:#805B4D;
+  --dim:#A18476;
+  --acc:#781F35;
+  --acc2:#96364D;
+  --ok:#78835A;
+  --bad:#B44A5D;
+  --warn:#B1844E;
+  --hov:rgba(200,157,130,.18);
+  --rs:linear-gradient(135deg,rgba(255,247,238,.92),rgba(238,217,200,.72));
+  --rb:rgba(120,31,53,.25);
+  --c1:#A98270;--c2:#C89D82;--c3:#78835A;--c4:#96364D;
+  --c5:#D1A789;--c6:#B44A5D;--c7:#8C9470;
+  --g1:#C89D82;--g2:#78835A;--g3:#A77C66;--g4:#96364D;--g5:#D1A789;
+  --glass-shadow:0 18px 44px rgba(91,52,39,.12),0 4px 12px rgba(91,52,39,.06),inset 0 1px 0 rgba(255,255,255,.92),inset 0 -1px 0 rgba(255,255,255,.22);
+  --glass-border:rgba(255,250,243,.78);
+  --glass-surface:linear-gradient(145deg,rgba(255,250,243,.78),rgba(255,247,238,.48) 48%,rgba(238,217,200,.40));
+  --glass-highlight:rgba(255,255,255,.78);
+  --glass-reflection:rgba(255,255,255,.34);
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#241511;
+  --card:rgba(56,34,27,.58);
+  --in:rgba(39,23,19,.72);
+  --line:rgba(230,198,174,.13);
+  --line2:rgba(220,177,148,.23);
+  --ink:#F8E9DC;
+  --mute:#D0AD98;
+  --dim:#A98270;
+  --acc:#A83A52;
+  --acc2:#B44A5D;
+  --ok:#A2AA79;
+  --bad:#D36A70;
+  --warn:#D1A789;
+  --hov:rgba(209,167,137,.11);
+  --rs:linear-gradient(135deg,rgba(120,55,62,.70),rgba(75,43,35,.62));
+  --rb:rgba(209,167,137,.28);
+  --c1:#A98270;--c2:#D1A789;--c3:#A2AA79;--c4:#B44A5D;
+  --c5:#A77C66;--c6:#D36A70;--c7:#8C9470;
+  --g1:#D1A789;--g2:#A2AA79;--g3:#A77C66;--g4:#B44A5D;--g5:#C89D82;
+  --glass-shadow:0 22px 58px rgba(12,5,3,.38),0 5px 18px rgba(12,5,3,.20),inset 0 1px 0 rgba(255,231,211,.13),inset 0 -1px 0 rgba(0,0,0,.20);
+  --glass-border:rgba(225,190,165,.18);
+  --glass-surface:linear-gradient(145deg,rgba(88,55,43,.70),rgba(53,32,26,.60) 52%,rgba(38,23,20,.62));
+  --glass-highlight:rgba(255,231,211,.15);
+  --glass-reflection:rgba(255,218,190,.10);
+}
+html{min-height:100%;background:var(--bg)!important;transition:background .35s ease}
+body{
+  min-height:100vh;color:var(--ink)!important;
+  background:
+    radial-gradient(ellipse at 9% 4%,rgba(255,250,239,.88) 0,transparent 34rem),
+    radial-gradient(ellipse at 88% 16%,rgba(200,157,130,.32) 0,transparent 38rem),
+    radial-gradient(ellipse at 68% 94%,rgba(150,54,77,.10) 0,transparent 34rem),
+    linear-gradient(135deg,#F7EAE0 0%,#F0DED1 48%,#F6EDE4 100%)!important;
+  background-attachment:fixed!important;
+}
+:root[data-theme="dark"] body{
+  background:
+    radial-gradient(ellipse at 12% 5%,rgba(167,124,102,.23) 0,transparent 35rem),
+    radial-gradient(ellipse at 88% 18%,rgba(168,58,82,.19) 0,transparent 38rem),
+    radial-gradient(ellipse at 62% 100%,rgba(209,167,137,.12) 0,transparent 36rem),
+    linear-gradient(135deg,#241511 0%,#38221B 48%,#21130F 100%)!important;
+}
+body:before,body:after{content:"";position:fixed;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(3px);transition:opacity .35s ease,background .35s ease}
+body:before{width:460px;height:460px;top:8%;right:-190px;background:radial-gradient(circle,rgba(120,31,53,.13),transparent 70%)}
+body:after{width:520px;height:520px;bottom:-270px;left:12%;background:radial-gradient(circle,rgba(255,250,239,.68),transparent 70%)}
+:root[data-theme="dark"] body:before{background:radial-gradient(circle,rgba(168,58,82,.19),transparent 70%)}
+:root[data-theme="dark"] body:after{background:radial-gradient(circle,rgba(209,167,137,.13),transparent 70%)}
+.app{isolation:isolate}
+aside,.top,.k,.card,.sc,.tw,.md,.cal,.tkl,
+.ep-modal,.ep-calendar,.week-cell,.event-time{
+  border-color:var(--glass-border)!important;
+  background:var(--glass-surface)!important;
+  -webkit-backdrop-filter:blur(30px) saturate(175%);
+  backdrop-filter:blur(30px) saturate(175%);
+  box-shadow:var(--glass-shadow);
+}
+aside{
+  background:linear-gradient(150deg,rgba(255,250,243,.76),rgba(255,247,238,.48) 52%,rgba(238,217,200,.40))!important;
+}
+:root[data-theme="dark"] aside{
+  background:linear-gradient(150deg,rgba(92,58,45,.74),rgba(55,33,27,.66) 55%,rgba(39,24,20,.62))!important;
+}
+.top{background:rgba(255,250,243,.60)!important}
+:root[data-theme="dark"] .top{background:rgba(58,36,29,.68)!important}
+.k,.card,.sc,.tw{position:relative}
+.k,.card,.sc{overflow:hidden}
+.k:before,.card:before,.sc:before,.top:before,aside:before{
+  content:"";position:absolute;pointer-events:none;inset:0;border-radius:inherit;
+  background:linear-gradient(118deg,var(--glass-highlight) 0%,rgba(255,255,255,.16) 17%,transparent 40%,transparent 72%,var(--glass-reflection) 100%);
+  opacity:.72;
+}
+:root[data-theme="dark"] .k:before,:root[data-theme="dark"] .card:before,
+:root[data-theme="dark"] .sc:before,:root[data-theme="dark"] .top:before,
+:root[data-theme="dark"] aside:before{opacity:.58}
+.k>*,.card>*,.sc>*,.top>*,aside>*{position:relative}
+.k b{color:var(--ink)!important}
+.k small,.h,.card .h{color:var(--dim)!important}
+.k i{color:var(--mute)!important}
+.brand,.md h3,h1{color:var(--ink)!important}
+.brand svg,.brand .ulika-heart{color:var(--acc)!important}
+.nav button,.pill{color:var(--mute)}
+.nav button:hover,.pill:hover{background:var(--hov)!important;color:var(--ink)!important}
+.nav button.on,.pill.on{
+  background:linear-gradient(125deg,rgba(120,31,53,.13),rgba(200,157,130,.20))!important;
+  border:1px solid var(--rb)!important;color:var(--acc)!important;
+  box-shadow:0 7px 20px rgba(91,38,49,.10),inset 0 1px 0 var(--glass-highlight)!important;
+}
+:root[data-theme="dark"] .nav button.on,:root[data-theme="dark"] .pill.on{
+  background:linear-gradient(125deg,rgba(168,58,82,.30),rgba(167,124,102,.16))!important;
+  color:#F8E9DC!important;box-shadow:0 8px 24px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,231,211,.16)!important;
+}
+.b{
+  color:var(--ink)!important;background:rgba(255,250,243,.40)!important;
+  border:1px solid var(--line2)!important;
+  box-shadow:inset 0 1px 0 var(--glass-highlight),0 2px 8px rgba(91,52,39,.04);
+}
+:root[data-theme="dark"] .b{background:rgba(209,167,137,.08)!important;box-shadow:inset 0 1px 0 rgba(255,231,211,.10)}
+.b:hover{background:var(--hov)!important;border-color:var(--rb)!important}
+.pri{
+  background:linear-gradient(135deg,#96364D 0%,#781F35 100%)!important;
+  border-color:rgba(120,31,53,.48)!important;color:#FFF7EE!important;
+  box-shadow:0 7px 19px rgba(120,31,53,.23),inset 0 1px 0 rgba(255,255,255,.24)!important;
+}
+:root[data-theme="dark"] .pri{
+  background:linear-gradient(135deg,#B44A5D 0%,#8E2D43 100%)!important;
+  border-color:rgba(225,150,155,.30)!important;color:#FFF7EE!important;
+  box-shadow:0 8px 22px rgba(10,3,3,.28),inset 0 1px 0 rgba(255,231,211,.20)!important;
+}
+.pri:hover{filter:brightness(1.08)}
+.sure{background:var(--bad)!important;border-color:var(--bad)!important;color:#fff!important}
+input,textarea,.fld,.dt,.cd,.dw,.hc,.hc2,.ep-date,.ep-calendar-head button{
+  color:var(--ink)!important;background:var(--in)!important;border-color:var(--line2)!important;
+}
+input::placeholder,textarea::placeholder{color:var(--dim)!important}
+input:focus,textarea:focus{border-color:var(--acc)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 20%,transparent)!important}
+table{color:var(--ink)}
+th,table thead th,.tw th,.dtbl th,.hgrid th{
+  background:rgba(238,217,200,.62)!important;color:var(--mute)!important;
+  border-color:var(--line2)!important;backdrop-filter:blur(18px) saturate(155%);
+}
+:root[data-theme="dark"] th,:root[data-theme="dark"] table thead th,
+:root[data-theme="dark"] .tw th,:root[data-theme="dark"] .dtbl th,
+:root[data-theme="dark"] .hgrid th{
+  background:rgba(91,57,45,.60)!important;color:#E2C6B3!important;border-color:var(--line2)!important;
+}
+td{color:var(--ink)!important;border-color:var(--line)!important}
+tr:hover td{background:var(--hov)!important}
+.tg{background:var(--in)!important;border-color:var(--line2)!important;color:var(--mute)!important}
+.ov{background:rgba(72,39,31,.26)!important;backdrop-filter:blur(16px) saturate(130%);-webkit-backdrop-filter:blur(16px) saturate(130%)}
+:root[data-theme="dark"] .ov{background:rgba(15,7,5,.72)!important}
+.md{color:var(--ink)!important;background:var(--glass-surface)!important;border-color:var(--glass-border)!important}
+.md h3{color:var(--ink)!important}
+.cal{color:var(--ink)!important;background:var(--glass-surface)!important}
+.cal .ch button,.pre button{color:var(--ink)!important;border-color:var(--line2)!important}
+.cal .cg button{color:var(--ink)!important}
+.cal .cg .sel,.dw.on{background:var(--acc)!important;border-color:var(--acc)!important;color:#fff!important}
+.cd.td{border-color:var(--acc)!important}
+.cd.sel,.ep-day.selected{background:color-mix(in srgb,var(--acc) 20%,transparent)!important;border-color:var(--acc)!important;color:var(--ink)!important}
+.cd:hover,.ep-day:hover{background:var(--hov)!important}
+.ep-day.inside,.cg .in{background:color-mix(in srgb,var(--acc) 13%,transparent)!important}
+.ts{background:rgba(72,39,31,.92)!important;color:#FFF7EE!important;border:1px solid var(--glass-border)!important;backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);box-shadow:0 12px 32px rgba(44,20,16,.22)}
+:root[data-theme="dark"] .ts{background:rgba(120,48,59,.94)!important}
+.lnk{color:var(--acc)!important}.lnk:hover{color:var(--acc2)!important}
+.pos{color:var(--ok)!important}.neg{color:var(--bad)!important}.done{color:var(--dim)!important}
+.bar,.bar2{background:color-mix(in srgb,var(--line2) 72%,transparent)!important}
+.hc.on,.hc2.on{background:var(--ok)!important;border-color:var(--ok)!important;color:#fff!important}
+.stb.on,.stb:hover{color:var(--warn)!important}
+#dot{box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 18%,transparent)}
+.smoke-hero{
+  background:linear-gradient(125deg,rgba(200,157,130,.34),rgba(120,31,53,.13),rgba(255,247,238,.48))!important;
+  border-color:var(--glass-border)!important;box-shadow:var(--glass-shadow)!important;
+}
+.smoke-hero .big-days{color:var(--acc)!important}
+:root[data-theme="dark"] .smoke-hero{
+  background:linear-gradient(125deg,rgba(167,124,102,.28),rgba(168,58,82,.22),rgba(38,23,20,.66))!important;
+  border-color:var(--glass-border)!important;
+}
+:root[data-theme="dark"] .smoke-hero .big-days{color:#F3CDB7!important}
+.ep-presets button{background:var(--in)!important;color:var(--mute)!important;border-color:var(--line2)!important}
+.ep-presets button.active{background:color-mix(in srgb,var(--acc) 16%,var(--card))!important;border-color:var(--acc)!important;color:var(--ink)!important}
+.week-cell .event-time{background:color-mix(in srgb,var(--acc) 12%,var(--card))!important;border-color:color-mix(in srgb,var(--acc) 34%,var(--line2))!important;color:var(--ink)!important}
+.theme-switch,.theme-switch-track{border-color:var(--rb)!important;background:var(--rs)!important}
+.theme-switch-thumb{background:linear-gradient(145deg,#C89D82,#781F35)!important;color:#fff!important}
+:root[data-theme="dark"] .theme-switch-thumb{background:linear-gradient(145deg,#D1A789,#A83A52)!important;color:#fff!important}
+.done,.tk.fin .tt{ text-decoration-color:var(--bad)!important }
+:root[data-theme="dark"] .done,:root[data-theme="dark"] .tk.fin .tt{color:#DCC2B1!important;text-decoration-color:#D36A70!important}
+@media(prefers-reduced-motion:no-preference){
+  html,body,aside,.top,.k,.card,.sc,.tw,.md,.cal,.b,.nav button{transition:background .3s ease,color .25s ease,border-color .3s ease,box-shadow .3s ease,transform .22s ease}
+  .k:hover,.card:hover,.sc:hover{transform:translateY(-2px);box-shadow:0 24px 58px rgba(91,52,39,.16),inset 0 1px 0 var(--glass-highlight)}
+  :root[data-theme="dark"] .k:hover,:root[data-theme="dark"] .card:hover,:root[data-theme="dark"] .sc:hover{box-shadow:0 24px 58px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,231,211,.16)}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  aside,.top,.k,.card,.sc,.tw,.md,.cal,.tkl{background:var(--card)!important}
+}
+@media(max-width:900px){
+  :root:not([data-theme="dark"]) aside .brand,
+  :root:not([data-theme="dark"]) .nav{
+    background:linear-gradient(145deg,rgba(255,250,243,.82),rgba(238,217,200,.62))!important;
+    border-color:var(--glass-border)!important;
+  }
+  :root[data-theme="dark"] aside .brand,
+  :root[data-theme="dark"] .nav{
+    background:linear-gradient(145deg,rgba(88,55,43,.82),rgba(47,28,23,.78))!important;
+    border-color:var(--glass-border)!important;
+  }
+}
+
+</style>
+
+<style id="finance-blush-tables">
+/* Finance tables: replace the leftover blue-violet panels with soft blush glass */
+.tw{
+  background:linear-gradient(145deg,rgba(250,226,231,.88),rgba(244,211,220,.78))!important;
+  border-color:rgba(190,126,145,.34)!important;
+}
+.tw table tbody tr,
+.tw table tbody td{
+  background:rgba(247,220,227,.76)!important;
+}
+.tw table tbody tr:hover td{
+  background:rgba(251,230,235,.92)!important;
+}
+.tw table tbody td{
+  border-bottom-color:rgba(164,103,122,.22)!important;
+}
+.tw table tbody td input{
+  background:rgba(255,245,247,.92)!important;
+  border-color:rgba(190,126,145,.34)!important;
+}
+:root[data-theme="dark"] .tw{
+  background:linear-gradient(145deg,rgba(91,49,59,.88),rgba(75,39,49,.84))!important;
+  border-color:rgba(220,157,174,.28)!important;
+}
+:root[data-theme="dark"] .tw table tbody tr,
+:root[data-theme="dark"] .tw table tbody td{
+  background:rgba(105,61,73,.78)!important;
+}
+:root[data-theme="dark"] .tw table tbody tr:hover td{
+  background:rgba(125,72,87,.88)!important;
+}
+:root[data-theme="dark"] .tw table tbody td{
+  border-bottom-color:rgba(231,177,190,.18)!important;
+}
+:root[data-theme="dark"] .tw table tbody td input{
+  background:rgba(53,31,36,.88)!important;
+  border-color:rgba(220,157,174,.25)!important;
+}
+</style>
+
+<style id="savings-table-pink-only">
+/* В «Финансы → Копилка» нижняя свободная часть таблиц совпадает с розовой областью строк */
+.sav-page .tw{
+  background:rgba(247,220,227,.76)!important;
+}
+:root[data-theme="dark"] .sav-page .tw{
+  background:rgba(105,61,73,.78)!important;
+}
+</style>
+
+
 </head><body>
 <div class="app">
 <aside>
@@ -1334,9 +1223,9 @@ f_debts(){return dTable()},
 f_exp(){return ''},
 f_earn(){return earnPage()},
 f_sav(){const sv=S.goals.reduce((s,x)=>s+x.s,0),tg=S.goals.reduce((s,x)=>s+x.t,0);
-return kp([['Накоплено',R(sv),'во всех копилках'],['Цель',R(tg),S.goals.length+' целей'],['Прогресс',P(sv,tg),'осталось '+R(tg-sv)]])+tool('Новая цель')+
+return `<div class="sav-page">`+kp([['Накоплено',R(sv),'во всех копилках'],['Цель',R(tg),S.goals.length+' целей'],['Прогресс',P(sv,tg),'осталось '+R(tg-sv)]])+tool('Новая цель')+
 tbl(['Цель','Накоплено','Нужно','Прогресс','',''],S.goals.map((x,i)=>`<tr><td><b class="v">${E(x.n)}</b>${gSub(x)}</td><td><input class="pos" value="${RI(x.s)}" inputmode="decimal" data-fmt="rub" data-c="gs" data-i="${i}" aria-label="Накоплено"></td><td>${R(x.t)}</td><td>${prog(x.s,x.t,'acc')} <div class="sub">${P(x.s,x.t)}</div></td><td><button class="b" data-a="dep" data-i="${i}">Внести</button></td><td style="white-space:nowrap"><button class="b ic" style="border:0" data-a="gedit" data-i="${i}" title="Изменить цель">${PEN}</button>${X('goals',i)}</td></tr>`),'Пока пусто. Поставь первую цель.')+
-`<div class="h" style="margin:0 0 10px">История взносов</div>`+tbl(['Дата','Цель','Сумма',''],S.dep.map((x,i)=>({...x,i})).sort((a,b)=>b.d.localeCompare(a.d)||b.i-a.i).map(x=>`<tr><td>${D(x.d)}</td><td>${E(x.g)}</td><td class="pos">+${R(x.a)}</td><td>${X('dep',x.i)}</td></tr>`),'Взносов пока нет.')},
+`<div class="h" style="margin:0 0 10px">История взносов</div>`+tbl(['Дата','Цель','Сумма',''],S.dep.map((x,i)=>({...x,i})).sort((a,b)=>b.d.localeCompare(a.d)||b.i-a.i).map(x=>`<tr><td>${D(x.d)}</td><td>${E(x.g)}</td><td class="pos">+${R(x.a)}</td><td>${X('dep',x.i)}</td></tr>`),'Взносов пока нет.')+`</div>`},
 plan(){return pPage()},schedule(){return ['Расписание <span>работа и учёба</span>',schedulePage()]},smoke(){return ['Без никотина <span>новые достижения каждый день</span>',smokePage()]}};
 const SRC=[{k:'n',l:'Название'},{k:'t',l:'Сумма долга, ₽',t:'num'},{k:'r',l:'Процент в месяц, % (0 — без процентов)',t:'num'},{k:'s',l:'Действует с даты (пусто — с начала таблицы)',t:'date'}];
 const nx=s=>{const[y,m,d]=s.split('-').map(Number);return d<20?iso(new Date(y,m-1,20)):iso(new Date(y,m,5))};
@@ -1368,8 +1257,8 @@ let archOpen=false;
 function drawArch(){document.querySelectorAll('.ov.arch').forEach(x=>x.remove());const m=document.createElement('div');m.className='ov arch';m.innerHTML=`<div class="md wide"><div class="mh"><h3>Архив выплат</h3><button class="b ic" data-a="archclose" title="Закрыть">${GI.x}</button></div>${dArch()}</div>`;m.onclick=e=>{if(e.target==m)A.archclose()};document.body.append(m)}
 function dArch(){const{src,rows}=S.dbt,L=rows.map((r,i)=>({r,i})).filter(x=>x.r.a),sum=L.reduce((a,x)=>a+src.reduce((b,s)=>b+(+x.r.pf[s.id]||0),0),0);
 return kp([['В архиве',L.length,'выплаченных дат'],['Выплачено по факту',R(sum),'по датам из архива']])+tbl(['Дата','Бюджет на оплату','Платёж план','Платёж факт','Остаток долга, факт','По источникам (факт)',''],L.map(x=>`<tr><td><b class="v">${D(x.r.d)}</b></td><td>${R(+x.r.b||0)}</td><td data-m="${x.i}:sp"></td><td data-m="${x.i}:sf"></td><td data-m="${x.i}:tf"></td><td class="l" data-m="${x.i}:d"></td><td style="white-space:nowrap"><button class="b ic" data-a="unarch" data-i="${x.i}" title="Вернуть из архива в таблицу">${IC_UN}</button>${X('dbt.rows',x.i)}</td></tr>`),'Архив пока пуст. Нажми ✓ справа у выплаченной даты в таблице долгов.')}
-const CATS=[['Продукты','M3 4h2l2.4 11h10.2l2-8H6.2M9 20a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z','#34d399'],['Кафе и рестораны','M5 8h11v6a4 4 0 01-4 4H9a4 4 0 01-4-4V8zM16 9h2a2 2 0 010 4h-2M8 3v2M12 3v2','#f5c542'],['Покупки','M6 8h12l1 12H5L6 8zM9 8a3 3 0 016 0','#a78bfa'],['Развлечения','M12 21a9 9 0 100-18 9 9 0 000 18zM10 8.5l5.5 3.5-5.5 3.5z','#f472b6'],['Здоровье','M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z','#ff6b7d'],['Спорт','M3 10v4M6 8v8M18 8v8M21 10v4M6 12h12','#60a5fa'],['Транспорт','M5 16V7a3 3 0 013-3h8a3 3 0 013 3v9M5 16h14M5 16v2h3v-2M16 16v2h3v-2M5 11h14M8.5 13.5h.01M15.5 13.5h.01','#fb923c'],['Жилищные расходы','M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6','#2dd4bf'],['Подписки','M20 12a8 8 0 01-14 5.3M4 12a8 8 0 0114-5.3M18 3v4h-4M6 21v-4h4','#818cf8'],['Переводы','M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4','#94a3b8']];
-const cat=n=>{const c=CATS.find(x=>x[0]==n);return c?{n:c[0],p:c[1],c:c[2]}:{n:n||'Другое',p:'M5 12h.01M12 12h.01M19 12h.01',c:'#94a3b8'}};
+const CATS=[['Продукты','M3 4h2l2.4 11h10.2l2-8H6.2M9 20a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z','#78835A'],['Кафе и рестораны','M5 8h11v6a4 4 0 01-4 4H9a4 4 0 01-4-4V8zM16 9h2a2 2 0 010 4h-2M8 3v2M12 3v2','#C89D82'],['Покупки','M6 8h12l1 12H5L6 8zM9 8a3 3 0 016 0','#A77C66'],['Развлечения','M12 21a9 9 0 100-18 9 9 0 000 18zM10 8.5l5.5 3.5-5.5 3.5z','#96364D'],['Здоровье','M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z','#B44A5D'],['Спорт','M3 10v4M6 8v8M18 8v8M21 10v4M6 12h12','#A77C66'],['Транспорт','M5 16V7a3 3 0 013-3h8a3 3 0 013 3v9M5 16h14M5 16v2h3v-2M16 16v2h3v-2M5 11h14M8.5 13.5h.01M15.5 13.5h.01','#D1A789'],['Жилищные расходы','M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6','#8C9470'],['Подписки','M20 12a8 8 0 01-14 5.3M4 12a8 8 0 0114-5.3M18 3v4h-4M6 21v-4h4','#A77C66'],['Переводы','M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4','#A98270']];
+const cat=n=>{const c=CATS.find(x=>x[0]==n);return c?{n:c[0],p:c[1],c:c[2]}:{n:n||'Другое',p:'M5 12h.01M12 12h.01M19 12h.01',c:'#A98270'}};
 const IC_CAL=SV('<path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/>'),CHV=SV('<path d="M6 9l6 6 6-6"/>');
 const CI=n=>{const c=cat(n);return `<span class="cc"><i style="color:${c.c};background:color-mix(in srgb,${c.c} 16%,transparent)">${SV(`<path d="${c.p}"/>`)}</i>${E(c.n)}</span>`};
 const cap=t=>t?t[0].toUpperCase()+t.slice(1):'',DF=v=>v?new Date(v+'T00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'}).replace(/\s?г\.$/,''):'Не выбрано';
@@ -1409,14 +1298,14 @@ function eTable(){const{a,b}=PER,L=S.exp.map((x,i)=>({...x,i})).filter(x=>x.d>=a
 return `<div class="tool" style="justify-content:space-between;gap:8px"><button class="b perb" data-a="perf">${IC_CAL}<span>${perLabel()}</span></button><button class="b pri" data-a="add">+ Добавить трату</button></div>`+
 kp([['Сегодня',R(sm(S.exp.filter(x=>x.d==TD))),'траты за день'],['За период',R(tot),L.length+' записей'],['В среднем в день',R(tot/days),'за '+days+' дн.'],['Больше всего',top?`<span style="font-size:20px;line-height:1.4">${E(cat(top[0]).n)}</span>`:'—',top?P(top[1],tot)+' · '+R(top[1]):'нет трат']])+
 `<div class="ex"><div class="card"><div class="h">Структура расходов</div>${tot?donut(m,tot):'<div class="sub" style="padding:40px 0;text-align:center">За выбранный период трат нет</div>'}</div><div>`+tbl(['Дата','Категория','Комментарий','Сумма',''],L.sort((x,y)=>y.d.localeCompare(x.d)).map(x=>`<tr><td>${D(x.d)}</td><td style="text-align:left">${CI(x.c)}</td><td class="l">${E(x.n)}</td><td><b class="v">−${R(x.a)}</b></td><td>${X('exp',x.i)}</td></tr>`),'За выбранный период трат нет.')+'</div></div>'}
-const OPTS={pri:[['u','Срочно','#ff6b7d'],['i','Важно','#f5c542'],['n','Обычно','#94a3b8']],
-pcat:[['','Без категории','#94a3b8','M5 12h.01M12 12h.01M19 12h.01'],['Работа','Работа','#60a5fa','M4 8h16v11H4zM9 8V5h6v3M4 13h16'],['Финансы','Финансы','#34d399','M3 7h16a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7zm0 0V6a2 2 0 012-2h11M16 14h2'],['Учёба','Учёба','#a78bfa','M3 8l9-5 9 5-9 5-9-5zM5 10v6c4 3 10 3 14 0v-6M21 8v7'],['Личное','Личное','#f5c542','M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0'],['Цветочки','Цветочки','#e58dbb','M12 12c-5-8-10-2-5 2-5 4 0 10 5 3 5 7 10 1 5-3 5-4 0-10-5-2zM12 12v9']],
+const OPTS={pri:[['u','Срочно','#B44A5D'],['i','Важно','#C89D82'],['n','Обычно','#A98270']],
+pcat:[['','Без категории','#A98270','M5 12h.01M12 12h.01M19 12h.01'],['Работа','Работа','#A77C66','M4 8h16v11H4zM9 8V5h6v3M4 13h16'],['Финансы','Финансы','#78835A','M3 7h16a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7zm0 0V6a2 2 0 012-2h11M16 14h2'],['Учёба','Учёба','#A77C66','M3 8l9-5 9 5-9 5-9-5zM5 10v6c4 3 10 3 14 0v-6M21 8v7'],['Личное','Личное','#C89D82','M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0'],['Цветочки','Цветочки','#96364D','M12 12c-5-8-10-2-5 2-5 4 0 10 5 3 5 7 10 1 5-3 5-4 0-10-5-2zM12 12v9']],
 rep:[['','Не повторять'],['d','Каждый день'],['w','Каждую неделю'],['m','Каждый месяц'],['m520','5-го и 20-го числа']],schedtype:[['work','Работа'],['study','Учёба'],['other','Другое']]};
 const OL=(k,v)=>{const o=OPTS[k].find(x=>x[0]==v)||OPTS[k][0];return o[3]?`<span class="cc"><i style="color:${o[2]};background:color-mix(in srgb,${o[2]} 16%,transparent)">${SV(`<path d="${o[3]}"/>`)}</i>${E(o[1])}</span>`:o[2]?`<span class="cc"><u class="dot" style="background:${o[2]}"></u>${E(o[1])}</span>`:E(o[1])};
 function selOpen(a,k,val,cb){if(CAL&&CAL.a===a){closeCal();return}closeCal();const el=document.createElement('div');el.className='cal list';el.style.width=a.offsetWidth+'px';el.innerHTML=OPTS[k].map(o=>`<button type="button" class="${o[0]==val?'sel2':''}" data-v="${E(o[0])}">${OL(k,o[0])}</button>`).join('');document.body.append(el);CAL={el,a};popAt(el,a);el.onclick=e=>{const b=e.target.closest('button');if(b){cb(b.dataset.v);closeCal()}}}
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6),addD=(d,n)=>{const x=new Date(d+'T00:00');x.setDate(x.getDate()+n);return iso(x)};
 const nextD=(d,r)=>{if(r=='d')return addD(d,1);if(r=='w')return addD(d,7);if(r=='m520')return nx(d);const x=new Date(d+'T00:00'),day=x.getDate();x.setDate(1);x.setMonth(x.getMonth()+1);x.setDate(Math.min(day,new Date(x.getFullYear(),x.getMonth()+1,0).getDate()));return iso(x)};
-const PC={u:'#ff6b7d',i:'#f5c542',n:'#94a3b8'},PR={u:0,i:1,n:2},sortT=(a,b)=>a.d.localeCompare(b.d)||PR[a.p]-PR[b.p];
+const PC={u:'#B44A5D',i:'#C89D82',n:'#A98270'},PR={u:0,i:1,n:2},sortT=(a,b)=>a.d.localeCompare(b.d)||PR[a.p]-PR[b.p];
 let OPEN={},CM=null,CD=TD;sub.plan='today';S.tasks.forEach(t=>{t.id=t.id||uid()});
 const conf=(t,b,f)=>ask(t,[],()=>{f()},b);
 function items(){const o=[];S.tasks.forEach((t,i)=>o.push({k:'t'+i,i,d:t.d,x:t.x,f:!!t.f,p:t.p||'n',c:t.c||'',r:t.r||'',s:t.s||[],n:t.n||'',top:t.top,id:t.id,fd:t.fd}));
@@ -1441,12 +1330,12 @@ else if(s=='done')b=K+list(dn.slice(0,80),1,'Выполненных задач �
 else if(s=='cal')b=pCal(all);else b=pRev(all,ov,op,d7);
 return ['Планнер <span>'+{today:'сегодня',week:'неделя',later:'позже',over:'просрочено',done:'выполнено',cal:'календарь',rev:'обзор недели'}[s]+'</span>',P+b]}
 function pCal(all){if(!CM){const x=new Date(CD+'T00:00');CM={y:x.getFullYear(),m:x.getMonth()}}const first=new Date(CM.y,CM.m,1),off=(first.getDay()+6)%7,n=new Date(CM.y,CM.m+1,0).getDate();
-const cells=[...Array(off).fill(0),...Array.from({length:n},(_,i)=>i+1)].map(d=>{if(!d)return'<span></span>';const k=CM.y+'-'+String(CM.m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'),ts=all.filter(t=>t.d==k);return `<button class="cd ${k==CD?'sel':''} ${k==TD?'td':''}" data-a="cday" data-d="${k}"><b>${d}</b><span>${ts.slice(0,4).map(t=>`<u style="background:${t.auto?'#60a5fa':PC[t.p]};${t.f?'opacity:.35':''}"></u>`).join('')}${ts.length>4?`<small>+${ts.length-4}</small>`:''}</span></button>`}).join('');
+const cells=[...Array(off).fill(0),...Array.from({length:n},(_,i)=>i+1)].map(d=>{if(!d)return'<span></span>';const k=CM.y+'-'+String(CM.m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'),ts=all.filter(t=>t.d==k);return `<button class="cd ${k==CD?'sel':''} ${k==TD?'td':''}" data-a="cday" data-d="${k}"><b>${d}</b><span>${ts.slice(0,4).map(t=>`<u style="background:${t.auto?'#A77C66':PC[t.p]};${t.f?'opacity:.35':''}"></u>`).join('')}${ts.length>4?`<small>+${ts.length-4}</small>`:''}</span></button>`}).join('');
 return `<div class="ex2"><div class="card"><div class="ch2"><button class="b ic" data-a="cnav" data-n="-1">${GI.cl}</button><b>${cap(first.toLocaleDateString('ru-RU',{month:'long',year:'numeric'}).replace(/\s?г\.$/,''))}</b><button class="b ic" data-a="cnav" data-n="1">${GI.cr}</button></div><div class="cgm">${['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map(w=>`<i>${w}</i>`).join('')}${cells}</div></div><div><div class="tool" style="justify-content:space-between;align-items:center"><div class="h" style="margin:0">${DF(CD)}</div><button class="b pri" data-a="addday">+ Задача на этот день</button></div>${list(all.filter(t=>t.d==CD).sort(sortT),0,'На этот день ничего нет.')}</div></div>`}
 function pRev(all,ov,op,d7){const nx7=op.filter(t=>t.d>TD&&t.d<=addD(TD,7)).sort(sortT),top=op.filter(t=>t.top&&!t.auto);
 return kp([['Сделано за 7 дней',d7.length,'задач и платежей'],['Просрочено сейчас',ov.length,ov.length?'нужно разобрать или перенести':'всё в срок'],['На следующие 7 дней',nx7.length,'запланировано']])+
 `<div class="ex2"><div><div class="h">Главные задачи недели · ${top.length}/3 (отметь ★)</div>${list(top,1,'Отметь звёздочкой до трёх главных задач.')}<div style="height:14px"></div><div class="h">Следующие 7 дней</div>${list(nx7,1,'Ничего не запланировано.')}</div><div><div class="h">Сделано за 7 дней</div>${list(d7,1,'Пока ничего.')}</div></div>`}
-OPTS.rate=[['0','Без оценки'],['1','★'],['2','★★'],['3','★★★'],['4','★★★★'],['5','★★★★★']];OPTS.buy=[['','Не куплена','#94a3b8'],['1','Куплена','#34d399']];OPTS.bpri=[['h','Высокий','#ff6b7d'],['m','Средний','#f5c542'],['l','Низкий','#94a3b8']];
+OPTS.rate=[['0','Без оценки'],['1','★'],['2','★★'],['3','★★★'],['4','★★★★'],['5','★★★★★']];OPTS.buy=[['','Не куплена','#A98270'],['1','Куплена','#78835A']];OPTS.bpri=[['h','Высокий','#B44A5D'],['m','Средний','#C89D82'],['l','Низкий','#A98270']];
 const PEN=SV('<path d="M4 20h4L19 9l-4-4L4 16v4zM13.5 6.5l4 4"/>');let BQ='',FA='',FG='',FR='';
 const PRE=[
 ['read','Время не ждёт','Джек Лондон',{th:'Понравилась. Среди книг Лондона — вторая после «Мартина Идена».'}],
@@ -1510,11 +1399,11 @@ return ['Книги <span>'+{read:'прочитано',now:'читаю сейч�
 kp([['Прочитано',rd.length,'в этом году: '+rd.filter(b=>(b.de||'').startsWith(yr)).length],['Читаю сейчас',nw.length,nw[0]?E(nw[0].t):'пока ничего'],['В очереди',wt.length,'куплено: '+wt.filter(b=>b.buy).length],['Средняя оценка',avgR(rd)||'—',rd.filter(b=>b.r).length+' оценённых книг']])+
 `<div class="tool" style="justify-content:space-between;gap:8px"><input class="bs" placeholder="Поиск: название, автор, заметки" data-c="bq" value="${E(BQ)}"><button class="b pri" data-a="add">+ Добавить книгу</button></div>`+fbar()+`<div id="blist">${bList()}</div>`]}
 const recall=()=>{const rs=S.books.filter(b=>b.st=='read'&&(b.o||b.my));if(!rs.length)return'';let h=0;for(const c of TD)h=(h*31+c.charCodeAt(0))>>>0;const b=rs[h%rs.length],tx=(b.o||b.my).slice(0,240);return `<div class="card"><div class="h">Вспомни книгу</div><b>${E(b.t)}</b><div class="sub" style="margin:2px 0 8px">${E(b.a)}</div><div style="color:var(--mute);font-size:13px;line-height:1.6">${E(tx)}${(b.o||b.my).length>240?'…':''}</div></div>`};
-const HC=['#34d399','#60a5fa','#f5c542','#f472b6','#a78bfa','#fb923c','#2dd4bf','#ff6b7d'],WD=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+const HC=['#78835A','#A77C66','#C89D82','#96364D','#A77C66','#D1A789','#8C9470','#B44A5D'],WD=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
 const HI={check:'M4 12l5 5L20 6',paw:'M12 15c-2.5 0-4 1.5-4 3s1.5 2 4 2 4-.5 4-2-1.5-3-4-3zM6.5 11a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM17.5 11a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM10 8a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM14 8a1.5 1.5 0 100-3 1.5 1.5 0 000 3z',bike:'M6 18a3 3 0 100-6 3 3 0 000 6zm12 0a3 3 0 100-6 3 3 0 000 6zM6 15l4-7h5l3 7M10 8l2 7',book:'M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3V4zM5 17a3 3 0 013-3h11',drop:'M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z',dumb:'M3 10v4M6 8v8M18 8v8M21 10v4M6 12h12',moon:'M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z',sun:'M12 17a5 5 0 100-10 5 5 0 000 10zM12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5',heart:'M12 20s-7-4.4-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.6-7 10-7 10z',pen:'M4 20h4L19 9l-4-4L4 16v4zM13.5 6.5l4 4',music:'M9 18V6l10-2v12M9 18a3 3 0 11-6 0 3 3 0 016 0zM19 16a3 3 0 11-6 0 3 3 0 016 0z',leaf:'M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19c2-4 5-7 9-9'};
 OPTS.htype=[['c','Галочка (сделал / не сделал)'],['n','Число (км, страницы, минуты…)']];OPTS.hsch=[['d','Каждый день'],['w','По дням недели'],['t','N раз в неделю']];OPTS.hlk=[['','Нет'],['read','Страницы из «Книг»'],['exp','Запись о трате'],['sav','Взнос в накопления']];
 OPTS.hcol=HC.map((c,i)=>[c,['Зелёный','Синий','Жёлтый','Розовый','Фиолетовый','Оранжевый','Бирюзовый','Красный'][i],c]);
-OPTS.hic=[['check','Галочка'],['paw','Прогулка с собакой'],['bike','Велосипед'],['book','Чтение'],['drop','Вода'],['dumb','Спорт'],['moon','Сон'],['sun','Утро'],['heart','Здоровье'],['pen','Писать'],['music','Музыка'],['leaf','Природа']].map(([v,l])=>[v,l,'#94a3b8',HI[v]]);
+OPTS.hic=[['check','Галочка'],['paw','Прогулка с собакой'],['bike','Велосипед'],['book','Чтение'],['drop','Вода'],['dumb','Спорт'],['moon','Сон'],['sun','Утро'],['heart','Здоровье'],['pen','Писать'],['music','Музыка'],['leaf','Природа']].map(([v,l])=>[v,l,'#A98270',HI[v]]);
 S.habits.forEach((h,i)=>{h.id=h.id||uid();h.t=h.t||'c';h.s=h.s||'d';h.c=h.c||HC[i%8];h.ic=h.ic||(/собак/i.test(h.n)?'paw':/велос/i.test(h.n)?'bike':/чтен/i.test(h.n)?'book':'check');h.nt=h.nt||{};if(!h.lk&&/^чтен/i.test(h.n))h.lk='read'});
 let HM=(()=>{const n=new Date();return{y:n.getFullYear(),m:n.getMonth()}})();const monD=k=>addD(k,-((new Date(k+'T00:00').getDay()+6)%7));SCHW=monD(TD);let HW=monD(TD);sub.habits=innerWidth<900?'week':'month';
 const hv=(h,k)=>+h.d[k]||0,hg=h=>h.t=='n'?+h.g||0:0,hdone=(h,k)=>{const v=hv(h,k);return h.t=='n'&&hg(h)?v>=hg(h):v>0},hpart=(h,k)=>h.t=='n'&&hg(h)>0&&hv(h,k)>0&&hv(h,k)<hg(h),hdue=(h,k)=>h.s=='w'?(h.dw||[]).includes((new Date(k+'T00:00').getDay()+6)%7):h.s=='t'?false:true,need=h=>Math.max(1,+h.tw||3);
@@ -1720,7 +1609,7 @@ cfgtog(e){const c=hcfg(),k=e.dataset.k;c.hide[k]=c.hide[k]?0:1;commit()},
 cfgmv(e){const c=hcfg(),i=+e.dataset.i,j=i+ +e.dataset.n;if(j<0||j>=c.order.length)return;[c.order[i],c.order[j]]=[c.order[j],c.order[i]];commit()},
 gedit(e){const g=S.goals[+e.dataset.i];ask('Изменить цель',[{k:'n',l:'Название',v:g.n},{k:'t',l:'Нужная сумма, ₽',t:'num',v:String(g.t)},{k:'dl',l:'Срок (необязательно)',t:'date',v:g.dl||''}],o=>{if(!o.n||!N(o.t))return false;const old=g.n;Object.assign(g,{n:o.n,t:N(o.t),dl:o.dl||''});if(old!=g.n)S.dep.forEach(d=>{if(d.g==old)d.g=g.n})},'Сохранить')},
 qa(e){const w=e.dataset.q;if(w=='exp'||w=='task'){const f=ADD[w=='exp'?'fin.exp':'plan'];ask(f[0],f[1].map(x=>({v:'',...x})),f[2]);return}
-if(w=='dep'){if(!S.goals.length){toast('Сначала добавь цель в «Накоплениях»');return}OPTS.goal=S.goals.map((g,i)=>[String(i),g.n,'#34d399']);ask('Взнос в накопления',[{k:'g',l:'Цель',t:'sel',o:'goal',v:'0'},{k:'a',l:'Сумма, ₽',t:'num',v:''},{k:'d',l:'Дата',t:'date',v:TD}],o=>{const g=S.goals[+o.g],a=N(o.a);if(!g||!a)return false;g.s+=a;S.dep.push({d:o.d||TD,g:g.n,a});if((o.d||TD)==TD)autoHab('sav')},'Внести');return}
+if(w=='dep'){if(!S.goals.length){toast('Сначала добавь цель в «Накоплениях»');return}OPTS.goal=S.goals.map((g,i)=>[String(i),g.n,'#78835A']);ask('Взнос в накопления',[{k:'g',l:'Цель',t:'sel',o:'goal',v:'0'},{k:'a',l:'Сумма, ₽',t:'num',v:''},{k:'d',l:'Дата',t:'date',v:TD}],o=>{const g=S.goals[+o.g],a=N(o.a);if(!g||!a)return false;g.s+=a;S.dep.push({d:o.d||TD,g:g.n,a});if((o.d||TD)==TD)autoHab('sav')},'Внести');return}
 const L=S.habits.filter(h=>!h.ar&&(h.s=='t'||hdue(h,TD))&&!hdone(h,TD));if(!L.length){toast('На сегодня всё отмечено');return}OPTS.qh=L.map(h=>[h.id,h.n,h.c]);ask('Отметить привычку',[{k:'h',l:'Привычка',t:'sel',o:'qh',v:L[0].id},{k:'v',l:'Значение (для числовых; пусто — цель)',t:'num',v:''}],o=>{const h=S.habits.find(x=>x.id==o.h);if(!h)return false;h.d[TD]=h.t=='n'?(N(o.v)||hg(h)||1):1},'Отметить')},
 calf(e){const h=e.previousElementSibling;calOpen(e,h.value,v=>{h.value=v;e.querySelector('span').textContent=DF(v)},{clear:1})},
 catf(e){const h=e.previousElementSibling;catOpen(e,h.value,v=>{h.value=v;e.innerHTML=CI(v)+CHV})},
@@ -1732,7 +1621,7 @@ th(){
   document.documentElement.dataset.theme=t;
   try{localStorage.setItem(T,t)}catch(x){}
   const meta=document.querySelector('meta[name="theme-color"]');
-  if(meta)meta.content=t==='dark'?'#393755':'#f8eaf0';
+  if(meta)meta.content=t==='dark'?'#241511':'#F3E4D8';
 },
 exp(){ask('Резервная копия',[{k:'j',l:'Скопируй этот текст и сохрани в заметках или файле',t:'area',v:JSON.stringify(S)}],()=>{},'Готово')},
 imp(){ask('Импорт',[{k:'j',l:'Вставь сохранённую копию. Текущие данные будут заменены.',t:'area'}],o=>{try{const j=JSON.parse(o.j);if(!j.dbt)throw 0;S=j}catch(x){toast('Не получилось прочитать копию');return false}},'Импортировать')},
